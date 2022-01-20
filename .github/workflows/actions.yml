@@ -1,5 +1,5 @@
 name: Lint
-on: [push]
+on: [pull-request]
 jobs:
   Lint:
     runs-on: ubuntu-latest
