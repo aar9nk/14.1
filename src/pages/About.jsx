@@ -1,13 +1,14 @@
-import { Outlet } from "react-router";
+import React from 'react';
+import { Outlet } from 'react-router';
 
- function About() {
-   return(
-     <div style={{backgroundColor: 'blue'}}>
+function About() {
+  return (
+    <div style={{ backgroundColor: 'blue' }}>
       <h2>About</h2>
       <p>Woah cool React Router Application</p>
       <Outlet />
-     </div>
-   )
- }
+    </div>
+  );
+}
 
- export default About;
+export default About;
