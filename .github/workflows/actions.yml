@@ -1,7 +1,15 @@
-name: Lint
-on: [pull-request]
+name: Lint, Test & Check
+on:
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  Lint:
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
     steps:
-      - npm run lint
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: npm ci
+      - run: npm run lint
