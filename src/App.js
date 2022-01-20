@@ -1,23 +1,23 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import About from "./pages/About";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import NavBar from "./component/NavBar";
-import Aaron from "./component/Aaron";
-import SideBar from "./component/SideBar";
+import GettingStarted from "./pages/GettingStarted";
+import Installation from "./pages/Installation";
+import Resources from "./pages/Resources";
+import Navbar from "./components/Navbar";
+import PageLayout from "./components/PageLayout";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<NavBar />}>
-          <Route path='/' element={<Home />} />
-          <Route element={<SideBar />}>
-            <Route path='about' element={<About />} />
-            <Route path='aaron' element={<Aaron />} />
-          </Route>
+    <Routes>
+      <Route element={<Navbar />}>
+        <Route element={<PageLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/installation" element={<Installation />} />
+          <Route path="/getting-started" element={<GettingStarted />} />
         </Route>
-      </Routes>
-    </BrowserRouter>
+      </Route>
+        <Route path='/resources' element={<Resources />}/>
+    </Routes>
   );
 }
 
